@@ -4,15 +4,11 @@ Ein intelligentes Kopfverfolgungssystem, das Ihr Gesicht erkennt und eine virtue
 
 ## 🎬 Demo-Video / Showdown
 
-<div align="center">
+<video width="100%" controls>
+  <source src="videos/VCbhYCzgBF.mp4" type="video/mp4">
+  Dein Browser unterstützt keine Video-Wiedergabe.
+</video>
 
-### Automatische Kopfverfolgung in Aktion
-
-[![Head Tracking Demo](https://via.placeholder.com/560x315?text=Head+Tracking+Demo)](videos/VCbhYCzgBF.mp4)
-
-[📹 Demo-Video ansehen](videos/VCbhYCzgBF.mp4)
-
-</div>
 
 ## ✨ Features
 
