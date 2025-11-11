@@ -4,10 +4,8 @@ Ein intelligentes Kopfverfolgungssystem, das Ihr Gesicht erkennt und eine virtue
 
 ## 🎬 Demo-Video / Showdown
 
-<video width="560" height="315" controls>
-  <source src="videos/VCbhYCzgBF.mp4" type="video/mp4">
-  Dein Browser unterstützt keine Video-Wiedergabe.
-</video>
+![Demo-Video](videos/VCbhYCzgBF.gif)
+
 
 
 ## ✨ Features
