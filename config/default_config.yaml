@@ -1,0 +1,233 @@
+# ============================================================================
+# Kopfverfolgungssystem - Standard-Konfigurationsdatei
+# ============================================================================
+# Diese Datei enthält alle konfigurierbaren Parameter des Systems
+# Änderungen hier beeinflussen das Verhalten des Kopfverfolgungssystems
+# 
+# Syntax:
+#   parameter_name: wert  # Erklärung
+#
+# Datentypen:
+#   - Zahlen: 1, 0.5, 2.5
+#   - Text: "wert" (in Anführungszeichen)
+#   - Boolean: true oder false (ohne Anführungszeichen)
+# ============================================================================
+
+# ============================================================================
+# KAMERA-EINSTELLUNGEN
+# ============================================================================
+kamera:
+  # Kamera-Index (0 = Standard-Webcam, 1 = zweite Kamera, etc.)
+  index: 0
+  
+  # Gewünschte Auflösung (Breite x Höhe in Pixeln)
+  # Höhere Auflösung = bessere Qualität, aber langsamer
+  # Beliebte Auflösungen: 1920x1080 (Full HD), 1280x720 (HD), 640x480 (VGA)
+  breite: 1920
+  hoehe: 1080
+  
+  # Bilder pro Sekunde (FPS - Frames Per Second)
+  # Typisch: 30 FPS (normal), 60 FPS (flüssig, langsamer), 15 FPS (schnell, weniger flüssig)
+  fps: 30
+  
+  # Kamera-Helligkeit anpassen (falls nötig)
+  # Bereich: -128 bis 127 (0 = Standard)
+  helligkeit: 0
+  
+  # Kamera-Kontrast anpassen
+  # Bereich: 0 bis 127 (32 = Standard)
+  kontrast: 32
+
+# ============================================================================
+# GESICHTSERKENNUNG (Haar-Kaskade)
+# ============================================================================
+gesichtserkennung:
+  # Skalierungsfaktor für die Kaskade-Detektion
+  # Kleinere Werte = präziser, aber langsamer
+  # Größere Werte = schneller, aber weniger genau
+  # Empfohlen: 1.05 - 1.3
+  skalierungsfaktor: 1.1
+  
+  # Minimale Nachbarn - Wie viele Treffer müssen überlappen?
+  # Höhere Werte = strengere Erkennung, weniger Fehlalarme
+  # Niedrigere Werte = lockere Erkennung, mehr Erkennungen
+  # Empfohlen: 3 - 7
+  min_nachbarn: 5
+  
+  # Minimale Gesichtsgröße in Pixeln
+  # Erkenne nur Gesichter, die mindestens so groß sind
+  # Zu klein = Rausch, Zu groß = kleine Gesichter werden ignoriert
+  min_gesichtsgroesse: 30
+  
+  # Maximale Gesichtsgröße in Pixeln
+  # Erkenne nur Gesichter, die höchstens so groß sind
+  # 0 = unbegrenzt (Standard)
+  max_gesichtsgroesse: 0
+  
+  # Intervall für Gesichtserkennung
+  # 1 = jeden Frame scannen (präzise, aber langsam)
+  # 2 = jeden 2. Frame (schneller, aber weniger Frames)
+  # 3+ = jeden N-ten Frame (noch schneller, aber ruckelig)
+  erkennungsintervall: 1
+
+# ============================================================================
+# ZOOM-EINSTELLUNGEN
+# ============================================================================
+zoom:
+  # Ideale Gesichtsbreite als Anteil der Bildbreite
+  # 0.25 = 25% der Bildbreite (viel Headroom)
+  # 0.35 = 35% der Bildbreite (normales Framing)
+  # 0.5 = 50% der Bildbreite (dichter)
+  # Empfohlen: 0.2 - 0.4
+  ideal_breiten_verhaeltnis: 0.25
+  
+  # Minimaler Zoom-Faktor (nicht weiter rauszoomen als original)
+  # 1.0 = Keine Vergrößerung (Originalbild)
+  # Sollte immer >= 1.0 sein
+  min_zoom: 1.0
+  
+  # Maximaler Zoom-Faktor (Pixelung vermeiden)
+  # 2.0 = 2× Vergrößerung
+  # 3.0 = 3× Vergrößerung (wird pixelig)
+  # Empfohlen: 2.0 - 3.0
+  max_zoom: 2.5
+
+# ============================================================================
+# GLÄTTUNGS-PARAMETER (Smoothing)
+# ============================================================================
+glattung:
+  # Glättungsfaktor für Pan-Bewegung (Kopfposition)
+  # 0.01 = Sehr träge (verzögert, aber glatt)
+  # 0.1 = Normal (Standard)
+  # 0.3 = Schnell (reaktiv, aber ruckelig)
+  # Bereich: 0.01 - 0.5
+  pan_faktor: 0.1
+  
+  # Glättungsfaktor für Zoom-Bewegung
+  # Normalerweise niedriger als Pan für sanfteres Zoomen
+  # Empfohlen: 0.02 - 0.1
+  zoom_faktor: 0.05
+  
+  # Exponential Moving Average (EMA) Erklärung:
+  # new_value = (1 - faktor) × alt + faktor × ziel
+  # faktor=0.1: 90% alt, 10% ziel → Träge
+  # faktor=0.5: 50% alt, 50% ziel → Neutral
+  # faktor=1.0: 0% alt, 100% ziel → Sofort (kein Smoothing)
+
+# ============================================================================
+# VISUALISIERUNG UND ANZEIGE
+# ============================================================================
+visualisierung:
+  # Erkannte Gesichter mit grünem Rechteck markieren
+  gesicht_anzeigen: true
+  
+  # Farbe des Erkennungs-Rechtecks (BGR-Format: Blau, Grün, Rot)
+  # (0, 255, 0) = Grün
+  # (255, 0, 0) = Blau
+  # (0, 0, 255) = Rot
+  # (255, 255, 0) = Cyan
+  rechteck_farbe: [0, 255, 0]
+  
+  # Dicke des Rechtecks in Pixeln
+  rechteck_dicke: 2
+  
+  # Zoom-Region anzeigen (rote Rechteck um den aktuellen Zoom-Bereich)
+  zoom_region_anzeigen: false
+  
+  # Statistiken anzeigen (FPS, Zoom-Level, etc.)
+  statistiken_anzeigen: true
+  
+  # Fenster-Größe für Vorschau
+  vorschau_breite: 960
+  vorschau_hoehe: 540
+
+# ============================================================================
+# VIRTUELLE KAMERA (pyvirtualcam)
+# ============================================================================
+virtuelle_kamera:
+  # Aktiviere virtuelle Kamera-Ausgabe
+  aktiviert: true
+  
+  # Virtuelle Kamera wird für Video-Calls (Zoom, Teams) verwendet
+  # Diese Einstellungen sollten der echten Kamera entsprechen
+  breite: 1920
+  hoehe: 1080
+  fps: 30
+
+# ============================================================================
+# LOGGING UND DEBUGGING
+# ============================================================================
+logging:
+  # Debug-Modus aktivieren (extra Ausgaben)
+  debug: false
+  
+  # Speichere Logs in Datei
+  datei: "logs/head_tracking.log"
+  
+  # Ausgabe-Level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  
+  # Speichere erkannte Frames (für Debugging)
+  frames_speichern: false
+  
+  # Verzeichnis für gespeicherte Frames
+  frames_verzeichnis: "debug_frames/"
+
+# ============================================================================
+# PERFORMANCE-OPTIMIERUNGEN
+# ============================================================================
+performance:
+  # Multi-Threading aktivieren (schneller auf Multi-Core)
+  multithreading: true
+  
+  # GPU-Beschleunigung (falls CUDA/OpenGL verfügbar)
+  gpu_beschleunigung: false
+  
+  # Maximale CPU-Auslastung (%)
+  # 0 = unbegrenzt
+  # 80 = Stoppt wenn CPU > 80% ist
+  max_cpu_prozent: 0
+
+# ============================================================================
+# TASTATUR-STEUERUNG
+# ============================================================================
+tastatur:
+  # Taste zum Umschalten der Visualisierung
+  visualisierung_toggle: "v"
+  
+  # Taste zum Beenden des Programms
+  beenden: "q"
+  
+  # Taste zum Speichern eines Screenshots
+  screenshot: "s"
+  
+  # Taste zum Pausieren/Fortsetzen
+  pause: "p"
+
+# ============================================================================
+# FORTGESCHRITTENE EINSTELLUNGEN
+# ============================================================================
+fortgeschritten:
+  # Verwende MediaPipe statt Haar-Kaskade (bessere Genauigkeit, langsamer)
+  # true = MediaPipe, false = Haar-Kaskade
+  mediapipe_aktivieren: false
+  
+  # Cascade Classifier Modell-Datei
+  # Standard: haarcascade_frontalface_default.xml
+  cascade_modell: "haarcascade_frontalface_default.xml"
+  
+  # Interpolationsmethode für Resize (0=Linear, 1=Cubic, 2=Nearest)
+  interpolation_methode: 0
+
+# ============================================================================
+# NETZWERK (für zukünftige Remote-Anwendungen)
+# ============================================================================
+netzwerk:
+  # Server-Modus (teile Kamera mit anderen Computern)
+  server_modus: false
+  
+  # Server-Port
+  server_port: 5000
+  
+  # Server-Host
+  server_host: "127.0.0.1"
