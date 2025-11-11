@@ -211,6 +211,7 @@ pip install pyvirtualcam
 
 ## 📁 Projektstruktur
 
+```
 head-tracking/
 ├── head_tracking.py
 ├── requirements.txt
@@ -221,6 +222,7 @@ head-tracking/
 ├── .gitignore
 └── config/
     └── default_config.yaml
+```
 
 ## 🎓 Technische Hintergründe
 
