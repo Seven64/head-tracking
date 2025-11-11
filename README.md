@@ -2,6 +2,18 @@
 
 Ein intelligentes Kopfverfolgungssystem, das Ihr Gesicht erkennt und eine virtuelle Kamera automatisch zoomt und ausrichtet. Perfekt für Video-Calls, Streaming und kreative Anwendungen!
 
+## 🎬 Demo-Video / Showdown
+
+<div align="center">
+
+### Automatische Kopfverfolgung in Aktion
+
+[![Head Tracking Demo](https://via.placeholder.com/560x315?text=Head+Tracking+Demo)](videos/VCbhYCzgBF.mp4)
+
+[📹 Demo-Video ansehen](videos/VCbhYCzgBF.mp4)
+
+</div>
+
 ## ✨ Features
 
 - **🎯 Automatische Gesichtserkennung** - Erkennt Ihr Gesicht in Echtzeit
