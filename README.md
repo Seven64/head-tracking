@@ -4,8 +4,8 @@ Ein intelligentes Kopfverfolgungssystem, das Ihr Gesicht erkennt und eine virtue
 
 ## 🎬 Demo-Video / Showdown
 
-<video width="100%" controls>
-  <source src="[videos/VCbhYCzgBF.mp4](https://github.com/Seven64/head-tracking/blob/f7a89ac2d036deb769972d87445cb21ad42db432/video/VCbhYCzgBF.mp4)" type="video/mp4">
+<video width="560" height="315" controls>
+  <source src="videos/VCbhYCzgBF.mp4" type="video/mp4">
   Dein Browser unterstützt keine Video-Wiedergabe.
 </video>
 
