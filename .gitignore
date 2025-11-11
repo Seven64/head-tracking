@@ -1,0 +1,272 @@
+# ============================================================================
+# Python-spezifische Dateien und Verzeichnisse
+# ============================================================================
+
+# Bytecode-Dateien
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C-Erweiterungen
+*.so
+
+# Verteilungs- / Verpackungsdateien
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer Logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit Test / Coverage Reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django Stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask Stuff:
+instance/
+.webassets-cache
+
+# Scrapy Stuff:
+.scrapy
+
+# Sphinx Dokumentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery Stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath angegebene Dateien
+.sage.py
+
+# Umgebungen
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder IDE Einstellungen
+.spyderproject
+.spyproject
+
+# Rope-Projekt-Einstellungen
+.ropeproject
+
+# mkdocs Dokumentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ============================================================================
+# Editor- und IDE-Dateien
+# ============================================================================
+
+# Visual Studio Code
+.vscode/
+.vscode-insiders/
+*.code-workspace
+.history/
+.ionide
+
+# PyCharm / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+.atomrc
+
+# Vim
+*~
+.*.swp
+.*.swo
+*.vim
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Nano
+.nano-history
+
+# OS-spezifische Dateien
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# ============================================================================
+# Projekt-spezifische Dateien
+# ============================================================================
+
+# Debug-Frames und Logs
+debug_frames/
+logs/
+*.log
+
+# Temporäre Dateien
+temp/
+tmp/
+*.tmp
+
+# Konfigurationsdateien (lokal)
+local_config.yaml
+.env.local
+
+# Video- und Bild-Output-Dateien
+output/
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Cache-Dateien
+.cache/
+*.cache
+
+# Backup-Dateien
+*.bak
+*.backup
+*~
+
+# ============================================================================
+# Sicherheit - Sensitive Daten nicht committen!
+# ============================================================================
+
+# API Keys und Secrets
+.env.local
+.env.*.local
+secrets/
+*.key
+*.pem
+config/secrets.yaml
+
+# Credentials
+credentials.json
+auth_token.txt
+
+# ============================================================================
+# Große Dateien (für Modelle, Datasets, etc.)
+# ============================================================================
+
+# Trainierte Modelle (falls vorhanden)
+models/
+*.model
+*.pkl
+*.joblib
+
+# Datasets
+data/
+datasets/
+*.csv
+*.xlsx
+*.xls
+
+# ============================================================================
+# Kommentierte Zeilen - Weitere nützliche Ausschlüsse
+# ============================================================================
+
+# Wenn du mit Docker arbeitest:
+# .dockerignore
+# docker-compose.override.yml
+
+# Wenn du mit Git LFS arbeitest:
+# .gitattributes
+
+# Node.js (falls auch Frontend)
+# node_modules/
+# npm-debug.log
+
+# Ruby (falls auch Backend)
+# Gemfile.lock
